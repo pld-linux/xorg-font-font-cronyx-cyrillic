@@ -10,7 +10,7 @@ Source0:	http://xorg.freedesktop.org/X11R7.0-RC0/font/font-cronyx-cyrillic-%{ver
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	pkgconfig >= 0.19
+BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	xorg-app-bdftopcf
 BuildRequires:	xorg-app-mkfontdir
 BuildRequires:	xorg-app-mkfontscale
