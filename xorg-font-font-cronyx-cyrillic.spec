@@ -1,20 +1,18 @@
 Summary:	cronyx-cyrillic font
 Summary(pl):	Font cronyx-cyrillic
 Name:		xorg-font-font-cronyx-cyrillic
-Version:	0.99.1
+Version:	1.0.0
 Release:	0.1
-License:	MIT
+License:	distributable (see COPYING)
 Group:		Fonts
-Source0:	http://xorg.freedesktop.org/releases/X11R7.0-RC3/font/font-cronyx-cyrillic-%{version}.tar.bz2
-# Source0-md5:	8e40b63ad1ba1c581720c0534119851d
+Source0:	http://xorg.freedesktop.org/releases/X11R7.0/src/font/font-cronyx-cyrillic-%{version}.tar.bz2
+# Source0-md5:	22b451e7230b8c003cfc496ee2d360cc
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
-BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	xorg-app-bdftopcf
 BuildRequires:	xorg-app-mkfontdir
 BuildRequires:	xorg-app-mkfontscale
-BuildRequires:	xorg-font-font-util
 BuildRequires:	xorg-util-util-macros
 Requires(post,postun):	fontpostinst
 Requires:	%{_fontsdir}/cyrillic
