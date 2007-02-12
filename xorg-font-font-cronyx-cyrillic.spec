@@ -1,5 +1,5 @@
 Summary:	cronyx-cyrillic font
-Summary(pl.UTF-8):   Font cronyx-cyrillic
+Summary(pl.UTF-8):	Font cronyx-cyrillic
 Name:		xorg-font-font-cronyx-cyrillic
 Version:	1.0.0
 Release:	0.1
