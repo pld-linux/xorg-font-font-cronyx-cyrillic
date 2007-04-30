@@ -1,11 +1,11 @@
-Summary:	cronyx-cyrillic font
-Summary(pl.UTF-8):	Font cronyx-cyrillic
+Summary:	Cronyx Cyrillic bitmap fonts
+Summary(pl.UTF-8):	Fonty bitmapowe Cronyx w cyrylicy
 Name:		xorg-font-font-cronyx-cyrillic
 Version:	1.0.0
-Release:	0.1
+Release:	1
 License:	distributable (see COPYING)
 Group:		Fonts
-Source0:	http://xorg.freedesktop.org/releases/X11R7.0/src/font/font-cronyx-cyrillic-%{version}.tar.bz2
+Source0:	http://xorg.freedesktop.org/releases/individual/font/font-cronyx-cyrillic-%{version}.tar.bz2
 # Source0-md5:	22b451e7230b8c003cfc496ee2d360cc
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
@@ -16,13 +16,17 @@ BuildRequires:	xorg-app-mkfontscale
 BuildRequires:	xorg-util-util-macros
 Requires(post,postun):	fontpostinst
 Requires:	%{_fontsdir}/cyrillic
+# contains useful aliases for these fonts
+Requires:	xorg-font-font-alias >= 1.0.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-cronyx-cyrillic font.
+Cronyx Cyrillic bitmap fonts: Courier, Helvetica, Times, Fixed and
+Nil.
 
 %description -l pl.UTF-8
-Font cronyx-cyrillic.
+Fonty bitmapowe Cronyx w cyrylicy: Courier, Helvetica, Times, Fixed i
+Nil.
 
 %prep
 %setup -q -n font-cronyx-cyrillic-%{version}
@@ -54,4 +58,5 @@ fontpostinst cyrillic
 %files
 %defattr(644,root,root,755)
 %doc COPYING ChangeLog
-%{_fontsdir}/cyrillic/*.pcf.gz
+%{_fontsdir}/cyrillic/crox*.pcf.gz
+%{_fontsdir}/cyrillic/koi*.pcf.gz
