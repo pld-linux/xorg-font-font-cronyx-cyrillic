@@ -1,12 +1,12 @@
 Summary:	Cronyx Cyrillic bitmap fonts
 Summary(pl.UTF-8):	Fonty bitmapowe Cronyx w cyrylicy
 Name:		xorg-font-font-cronyx-cyrillic
-Version:	1.0.0
-Release:	2
+Version:	1.0.1
+Release:	1
 License:	distributable (see COPYING)
 Group:		Fonts
 Source0:	http://xorg.freedesktop.org/releases/individual/font/font-cronyx-cyrillic-%{version}.tar.bz2
-# Source0-md5:	22b451e7230b8c003cfc496ee2d360cc
+# Source0-md5:	15f86f5e572df21218617982eb4b3bfc
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
@@ -37,6 +37,8 @@ Nil.
 %{__autoconf}
 %{__automake}
 %configure \
+	--build=%{_host_platform} \
+	--host=%{_host_platform} \
 	--with-fontdir=%{_fontsdir}/cyrillic
 
 %{__make}
