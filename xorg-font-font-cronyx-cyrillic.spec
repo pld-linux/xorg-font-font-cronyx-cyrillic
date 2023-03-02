@@ -1,20 +1,22 @@
 Summary:	Cronyx Cyrillic bitmap fonts
 Summary(pl.UTF-8):	Fonty bitmapowe Cronyx w cyrylicy
 Name:		xorg-font-font-cronyx-cyrillic
-Version:	1.0.3
-Release:	2
+Version:	1.0.4
+Release:	1
 License:	distributable (see COPYING)
 Group:		Fonts
-Source0:	http://xorg.freedesktop.org/releases/individual/font/font-cronyx-cyrillic-%{version}.tar.bz2
-# Source0-md5:	e452b94b59b9cfd49110bb49b6267fba
-URL:		http://xorg.freedesktop.org/
-BuildRequires:	autoconf >= 2.57
+Source0:	https://xorg.freedesktop.org/releases/individual/font/font-cronyx-cyrillic-%{version}.tar.xz
+# Source0-md5:	38669914561315397c06419b3d49d876
+URL:		https://xorg.freedesktop.org/
+BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
+BuildRequires:	tar >= 1:1.22
 BuildRequires:	xorg-app-bdftopcf
 BuildRequires:	xorg-app-mkfontdir
 BuildRequires:	xorg-app-mkfontscale
-BuildRequires:	xorg-font-font-util >= 1.2
-BuildRequires:	xorg-util-util-macros >= 1.3
+BuildRequires:	xorg-font-font-util >= 1.4
+BuildRequires:	xorg-util-util-macros >= 1.20
+BuildRequires:	xz
 Requires(post,postun):	fontpostinst
 Requires:	%{_fontsdir}/cyrillic
 # contains useful aliases for these fonts
@@ -38,8 +40,10 @@ Nil.
 %{__autoconf}
 %{__automake}
 %configure \
+%if "%{_gnu}" != "-gnux32"
 	--build=%{_host} \
 	--host=%{_host} \
+%endif
 	--with-fontdir=%{_fontsdir}/cyrillic
 
 %{__make}
@@ -61,6 +65,6 @@ fontpostinst cyrillic
 
 %files
 %defattr(644,root,root,755)
-%doc COPYING ChangeLog README
+%doc COPYING ChangeLog README.md
 %{_fontsdir}/cyrillic/crox*.pcf.gz
 %{_fontsdir}/cyrillic/koi*.pcf.gz
